@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+    <link href="" rel="stylesheet">
+    <script src="../B/B.5.js"></script>
+    <style>
+      #result li.pass {color: green}
+      #result li.fail {color: red}
+    </style>
+  </head>
+  <body>
+    <ul id="result"></ul>
+    <script type="text/javascript">
+      var text = 'Demo arigato';
+      function getText() {
+        report("In getText function");
+        return text;
+      }
+      function useless(ninjaCallback) {
+        report('In useless function');
+        return ninjaCallback();
+      }
+
+      report("Before making all the calls");
+      assert(useless(getText) === text, 'The useless function works! ' + text)
+
+      var values = [0,0,303,4,2,5,6,3,34,5,4];
+      values.sort(function(value1, value2) {
+        return value1 - value2
+      })
+      console.log(values)
+    </script>
+  </body>
+</html>
