@@ -7,3 +7,4 @@
 ## 文档
 git status 检测当前文件夹的状态
 git add xxx 管理某个文件了
+git commit -m '提交信息' 生成一个版本
