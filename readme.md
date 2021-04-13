@@ -36,3 +36,22 @@
 10. 克隆远程仓库的代码 git clone 远程仓库地址
 11. git pull origin dev 从线上dev分支拉代码到本地
    相当于 git fetch origin dev  &&  git merge origin/dev
+12. git rebase 使提交记录变得简洁(如果代码已经提交到远程库，不建议执行rebase)
+    git rebase -i HEAD~3 最后三条commit合并
+
+    场景二：把dev分支的记录合并到master 不产生分叉
+    git checkout dev
+    git rebase master
+    git checkout master
+    git merge dev
+    场景三：避免产生分叉
+    git fetch origin dev
+    git rebase origin/dev
+
+    注意事项：
+    git rebase 产生冲突的时候怎么办
+    解决冲突 
+    git add .
+    git rebase --continue
+13. git log --graph图形化展示日志
+    git log --graph --pretty=format:"%h %s"  其中h表示hash值 s表示日志记录
